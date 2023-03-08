@@ -1,0 +1,84 @@
+[versions]
+java = "17"
+mapstruct = "1.5.3.Final"
+junitVersion = "5.8.2"
+
+
+commonLibsVersion= "20221214_7"
+commonCoreVersion= "20221209_7"
+
+[libraries]
+
+dropwizardBom = 'io.dropwizard:dropwizard-dependencies:2.1.3'
+dropwizardSwagger = 'com.smoketurner:dropwizard-swagger:2.0.12-1'
+dropwizardKafka = 'io.dropwizard.modules:dropwizard-kafka:1.8.0'
+
+postgresql = 'org.postgresql:postgresql:42.4.1'
+
+hsqldb = 'org.hsqldb:hsqldb:2.7.0'
+
+liquibase = 'org.liquibase:liquibase-core:4.11.0'
+
+jacksonXml = 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.14.0'
+
+feignOkHttp = 'io.github.openfeign:feign-okhttp:11.9.1'
+feignJackson = 'io.github.openfeign:feign-jackson:11.9.1'
+feignSlf4j = 'io.github.openfeign:feign-slf4j:11.9.1'
+feignForm = 'io.github.openfeign.form:feign-form:3.8.0'
+
+kafkaClients = 'org.apache.kafka:kafka-clients:3.3.1'
+kafkaJsonSerializer = 'io.confluent:kafka-json-serializer:7.2.1'
+springKafka = 'org.springframework.kafka:spring-kafka:3.0.0'
+springKafkaTest = 'org.springframework.kafka:spring-kafka-test:3.0.0'
+
+swaggerCore = 'io.swagger.core.v3:swagger-core:2.2.2'
+swaggerJaxrs2 = 'io.swagger.core.v3:swagger-jaxrs2:2.2.2'
+swaggerIntegration = 'io.swagger.core.v3:swagger-integration:2.2.2'
+swaggerAnnotations = 'io.swagger:swagger-annotations:1.6.6'
+
+redisClient = 'redis.clients:jedis:4.2.3'
+
+rollbarIntegration = 'com.rollbar:rollbar-logback:1.8.1'
+
+springExpression = 'org.springframework:spring-expression:5.3.23'
+
+quartz = 'org.quartz-scheduler:quartz:2.3.2'
+
+hawkAIClient = { module = 'com.finx.common-core:hawk-ai-client', version.ref = 'commonCoreVersion' }
+webUtil = { module = 'com.finx.common-libs:web-util', version.ref = 'commonLibsVersion' }
+otpClient = { module = 'com.finx.common-libs:otp-client', version.ref = 'commonLibsVersion' }
+kafkaClient = { module = 'com.finx.common-libs:kafka-client', version.ref = 'commonLibsVersion' }
+archunit = { module = 'com.finx.common-libs:archunit', version.ref = 'commonLibsVersion' }
+testUtil = { module = 'com.finx.common-libs:testutil', version.ref = 'commonLibsVersion' }
+
+testContainersBom = 'org.testcontainers:testcontainers-bom:1.16.3'
+awsJDKBom = 'com.amazonaws:aws-java-sdk-bom:1.12.268'
+guiceyBom = 'ru.vyarus.guicey:guicey-bom:5.6.1-1'
+
+mapstruct = { module = 'org.mapstruct:mapstruct', version.ref = 'mapstruct' }
+mapstructProcessor = { module = 'org.mapstruct:mapstruct-processor', version.ref = 'mapstruct' }
+
+jbehave = 'org.jbehave:jbehave-core:5.0'
+wiremock = 'com.github.tomakehurst:wiremock-jre8-standalone:2.33.2'
+mockitoInline = 'org.mockito:mockito-inline:4.7.0'
+
+apacheCommons = 'org.apache.commons:commons-collections4:4.4'
+
+libPhonenumber = 'com.googlecode.libphonenumber:libphonenumber:8.12.52'
+
+junitJupiter = { module = 'org.junit.jupiter:junit-jupiter', version.ref = 'junitVersion' }
+junitJupiterParams = { module = 'org.junit.jupiter:junit-jupiter-params', version.ref = 'junitVersion' }
+
+snakeyaml = { module = 'org.yaml:snakeyaml', version = { strictly = "1.31" } }
+
+bcpg = 'org.bouncycastle:bcpg-jdk18on:1.72.2'
+bcprov = 'org.bouncycastle:bcprov-jdk18on:1.72'
+jsch = 'com.github.mwiede:jsch:0.2.5'
+commonsIO = 'commons-io:commons-io:2.11.0'
+
+lombok = 'org.projectlombok:lombok:1.18.24'
+lombokMapstruct = 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+
+[plugins]
+
+[bundles]
