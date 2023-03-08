@@ -73,7 +73,7 @@ snakeyaml = { module = 'org.yaml:snakeyaml', version = { strictly = "1.31" } }
 
 bcpg = 'org.bouncycastle:bcpg-jdk18on:1.72.2'
 bcprov = 'org.bouncycastle:bcprov-jdk18on:1.72'
-jsch = 'com.github.mwiede:jsch:0.2.5'
+jsch = 'com.github.mwiede:jsch:0.2.7'
 commonsIO = 'commons-io:commons-io:2.11.0'
 
 lombok = 'org.projectlombok:lombok:1.18.24'
