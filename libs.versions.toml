@@ -36,7 +36,7 @@ swaggerJaxrs2 = 'io.swagger.core.v3:swagger-jaxrs2:2.2.2'
 swaggerIntegration = 'io.swagger.core.v3:swagger-integration:2.2.2'
 swaggerAnnotations = 'io.swagger:swagger-annotations:1.6.6'
 
-redisClient = 'redis.clients:jedis:4.2.3'
+redisClient = 'redis.clients:jedis:4.3.1'
 
 rollbarIntegration = 'com.rollbar:rollbar-logback:1.8.1'
 
