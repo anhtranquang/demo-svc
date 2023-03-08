@@ -39,7 +39,7 @@ subprojects {
 		implementation('org.mapstruct:mapstruct:1.5.2.Final')
 		implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.14.0'
 
-		compileOnly 'org.projectlombok:lombok:1.18.24'
+		compileOnly 'org.projectlombok:lombok:1.18.26'
 
 		annotationProcessor('org.mapstruct:mapstruct-processor:1.5.2.Final')
 		annotationProcessor 'org.projectlombok:lombok'
