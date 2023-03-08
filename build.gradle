@@ -1,5 +1,8 @@
 buildscript {
 	repositories {
+		maven {
+			url "https://nexus.nonprod.galaxyfinx.in/repository/gradle-artifacts"
+		}
 		mavenCentral()
 	}
 	dependencies {
