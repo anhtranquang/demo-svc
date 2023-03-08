@@ -40,7 +40,7 @@ redisClient = 'redis.clients:jedis:4.2.3'
 
 rollbarIntegration = 'com.rollbar:rollbar-logback:1.8.1'
 
-springExpression = 'org.springframework:spring-expression:5.3.23'
+springExpression = 'org.springframework:spring-expression:5.3.25'
 
 quartz = 'org.quartz-scheduler:quartz:2.3.2'
 
