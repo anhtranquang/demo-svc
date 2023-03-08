@@ -4,7 +4,7 @@ mapstruct = "1.5.3.Final"
 junitVersion = "5.8.2"
 
 
-commonLibsVersion= "20221214_7"
+commonLibsVersion= "20221214_8"
 commonCoreVersion= "20221209_7"
 
 [libraries]
