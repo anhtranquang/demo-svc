@@ -34,7 +34,7 @@ springKafkaTest = 'org.springframework.kafka:spring-kafka-test:3.0.0'
 swaggerCore = 'io.swagger.core.v3:swagger-core:2.2.2'
 swaggerJaxrs2 = 'io.swagger.core.v3:swagger-jaxrs2:2.2.2'
 swaggerIntegration = 'io.swagger.core.v3:swagger-integration:2.2.2'
-swaggerAnnotations = 'io.swagger:swagger-annotations:1.6.6'
+swaggerAnnotations = 'io.swagger:swagger-annotations:1.6.9'
 
 redisClient = 'redis.clients:jedis:4.2.3'
 
