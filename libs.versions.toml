@@ -21,9 +21,9 @@ liquibase = 'org.liquibase:liquibase-core:4.11.0'
 
 jacksonXml = 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.14.0'
 
-feignOkHttp = 'io.github.openfeign:feign-okhttp:11.9.1'
-feignJackson = 'io.github.openfeign:feign-jackson:11.9.1'
-feignSlf4j = 'io.github.openfeign:feign-slf4j:11.9.1'
+feignOkHttp = 'io.github.openfeign:feign-okhttp:11.10'
+feignJackson = 'io.github.openfeign:feign-jackson:11.10'
+feignSlf4j = 'io.github.openfeign:feign-slf4j:11.10'
 feignForm = 'io.github.openfeign.form:feign-form:3.8.0'
 
 kafkaClients = 'org.apache.kafka:kafka-clients:3.3.1'
