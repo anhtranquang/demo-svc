@@ -5,7 +5,7 @@ junitVersion = "5.8.2"
 
 
 commonLibsVersion= "20221214_7"
-commonCoreVersion= "20221209_7"
+commonCoreVersion= "20230125_11"
 
 [libraries]
 
