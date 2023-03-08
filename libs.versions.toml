@@ -51,7 +51,7 @@ kafkaClient = { module = 'com.finx.common-libs:kafka-client', version.ref = 'com
 archunit = { module = 'com.finx.common-libs:archunit', version.ref = 'commonLibsVersion' }
 testUtil = { module = 'com.finx.common-libs:testutil', version.ref = 'commonLibsVersion' }
 
-testContainersBom = 'org.testcontainers:testcontainers-bom:1.16.3'
+testContainersBom = 'org.testcontainers:testcontainers-bom:1.17.6'
 awsJDKBom = 'com.amazonaws:aws-java-sdk-bom:1.12.268'
 guiceyBom = 'ru.vyarus.guicey:guicey-bom:5.6.1-1'
 
