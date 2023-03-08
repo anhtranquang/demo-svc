@@ -41,7 +41,7 @@ subprojects {
 
 		compileOnly 'org.projectlombok:lombok:1.18.24'
 
-		annotationProcessor('org.mapstruct:mapstruct-processor:1.5.2.Final')
+		annotationProcessor('org.mapstruct:mapstruct-processor:1.5.3.Final')
 		annotationProcessor 'org.projectlombok:lombok'
 		annotationProcessor group: 'org.projectlombok', name: 'lombok-mapstruct-binding', version: '0.2.0'
 
