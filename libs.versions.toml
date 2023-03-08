@@ -53,7 +53,7 @@ testUtil = { module = 'com.finx.common-libs:testutil', version.ref = 'commonLibs
 
 testContainersBom = 'org.testcontainers:testcontainers-bom:1.16.3'
 awsJDKBom = 'com.amazonaws:aws-java-sdk-bom:1.12.268'
-guiceyBom = 'ru.vyarus.guicey:guicey-bom:5.6.1-1'
+guiceyBom = 'ru.vyarus.guicey:guicey-bom:5.7.0-1'
 
 mapstruct = { module = 'org.mapstruct:mapstruct', version.ref = 'mapstruct' }
 mapstructProcessor = { module = 'org.mapstruct:mapstruct-processor', version.ref = 'mapstruct' }
