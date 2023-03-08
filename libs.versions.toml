@@ -19,7 +19,7 @@ hsqldb = 'org.hsqldb:hsqldb:2.7.0'
 
 liquibase = 'org.liquibase:liquibase-core:4.11.0'
 
-jacksonXml = 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.14.0'
+jacksonXml = 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.14.2'
 
 feignOkHttp = 'io.github.openfeign:feign-okhttp:11.9.1'
 feignJackson = 'io.github.openfeign:feign-jackson:11.9.1'
