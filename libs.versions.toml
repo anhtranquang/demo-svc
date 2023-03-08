@@ -31,9 +31,9 @@ kafkaJsonSerializer = 'io.confluent:kafka-json-serializer:7.2.1'
 springKafka = 'org.springframework.kafka:spring-kafka:3.0.0'
 springKafkaTest = 'org.springframework.kafka:spring-kafka-test:3.0.0'
 
-swaggerCore = 'io.swagger.core.v3:swagger-core:2.2.2'
-swaggerJaxrs2 = 'io.swagger.core.v3:swagger-jaxrs2:2.2.2'
-swaggerIntegration = 'io.swagger.core.v3:swagger-integration:2.2.2'
+swaggerCore = 'io.swagger.core.v3:swagger-core:2.2.8'
+swaggerJaxrs2 = 'io.swagger.core.v3:swagger-jaxrs2:2.2.8'
+swaggerIntegration = 'io.swagger.core.v3:swagger-integration:2.2.8'
 swaggerAnnotations = 'io.swagger:swagger-annotations:1.6.6'
 
 redisClient = 'redis.clients:jedis:4.2.3'
