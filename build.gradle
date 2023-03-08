@@ -37,7 +37,7 @@ subprojects {
 	dependencies {
 		implementation 'org.springframework.boot:spring-boot-starter'
 		implementation('org.mapstruct:mapstruct:1.5.2.Final')
-		implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.14.0'
+		implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.14.2'
 
 		compileOnly 'org.projectlombok:lombok:1.18.24'
 
