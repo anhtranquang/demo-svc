@@ -9,7 +9,7 @@ commonCoreVersion= "20221209_7"
 
 [libraries]
 
-dropwizardBom = 'io.dropwizard:dropwizard-dependencies:2.1.3'
+dropwizardBom = 'io.dropwizard:dropwizard-dependencies:2.1.5'
 dropwizardSwagger = 'com.smoketurner:dropwizard-swagger:2.0.12-1'
 dropwizardKafka = 'io.dropwizard.modules:dropwizard-kafka:1.8.0'
 
