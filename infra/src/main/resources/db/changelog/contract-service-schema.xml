@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="20230217140300-init-database" author="quan.nguyen">
+        <sql>
+            CREATE TABLE template (
+                id bigserial NOT NULL,
+                metadata jsonb NULL,
+                template_url varchar NOT NULL,
+                language_code varchar(2) NULL,
+                template_name varchar(255) NOT NULL,
+                valid_from date null,
+                valid_to date null,
+                created_at timestamp without time zone NOT NULL DEFAULT now(),
+                updated_at timestamp without time zone NOT NULL DEFAULT now(),
+                created_by varchar(255) NULL,
+                updated_by varchar(255) NULL,
+                CONSTRAINT template_pk PRIMARY KEY (id)
+            );
+
+            CREATE TABLE contract (
+                id bigserial NOT NULL,
+                contract_no varchar(20) NOT NULL,
+                template_id  bigint not NULL,
+                language_code varchar(2) NULL,
+                data jsonb NOT NULL,
+                party_id bigint not null,
+                party_detail jsonb null,
+                bill_code varchar(100) null,
+                status varchar(20),
+                signed_url text null,
+                error text null,
+                certificate_id bigint NOT NULL,
+                created_at timestamp without time zone NOT NULL DEFAULT now(),
+                updated_at timestamp without time zone NOT NULL DEFAULT now(),
+                created_by varchar(255) NULL,
+                updated_by varchar(255) NULL,
+                CONSTRAINT contract_pk PRIMARY KEY (id)
+            );
+
+            CREATE INDEX contract_contract_no_party_id_index
+            ON contract(contract_no, party_id);
+
+            CREATE INDEX contract_contract_id_party_id_index
+            ON contract(id, party_id);
+
+            CREATE TABLE contract_certificate (
+                id bigserial NOT NULL,
+                certificate text NULL,
+                certificate_serial_number text null,
+                certificate_dn text NULL,
+                bill_code text not null,
+                party_id bigint not null,
+                valid_from timestamp without time zone null,
+                valid_to timestamp without time zone null,
+                created_at timestamp without time zone NOT NULL DEFAULT now(),
+                updated_at timestamp without time zone NOT NULL DEFAULT now(),
+                created_by varchar(255) NULL,
+                updated_by varchar(255) NULL,
+                CONSTRAINT contract_certificate_pk PRIMARY KEY (id)
+            );
+
+            CREATE TABLE esign_log (
+                id bigserial not null,
+                contract_id bigint not null,
+                http_code int not null,
+                request_payload jsonb null,
+                response_payload jsonb null,
+                endpoint text not null,
+                created_at timestamp without time zone NOT NULL DEFAULT now(),
+                updated_at timestamp without time zone NOT NULL DEFAULT now(),
+                created_by varchar(255) NULL,
+                updated_by varchar(255) NULL,
+                CONSTRAINT esign_log_pk PRIMARY KEY (id)
+            );
+        </sql>
+
+        <rollback>
+            <sql>
+                DROP TABLE public.contract;
+
+                DROP TABLE public.contract_certificate;
+
+                DROP TABLE public.esign_log;
+
+                DROP TABLE public."template";
+            </sql>
+        </rollback>
+    </changeSet>
+    <changeSet id="20230217140300-insert-template-data" author="quan.nguyen">
+        <sql>
+            INSERT INTO public."template" (metadata, template_url, language_code, template_name, valid_from, valid_to, created_at, updated_at, created_by, updated_by)
+            VALUES
+            ('{}'::jsonb, 'static/instalment-contract-form-v1.pdf', 'VI', 'INSTALMENT_CONTRACT', '2023-01-01', NULL, '2023-02-17 14:27:55.870', '2023-02-17 14:27:55.870', 'contract-service', 'contract-service'),
+            ('{}'::jsonb, 'static/qc-contract-promotion-form-v1.pdf', 'VI', 'QC_PROMOTION_CONTRACT', '2023-01-01', NULL, '2023-02-17 14:27:55.880', '2023-02-17 14:27:55.880', 'contract-service', 'contract-service'),
+            ('{}'::jsonb, 'static/qc-contract-promotion-form-v1.pdf', 'VI', 'QC_CONTRACT', '2023-01-01', NULL, '2023-02-17 14:27:55.880', '2023-02-17 14:27:55.880', 'contract-service', 'contract-service');
+        </sql>
+    </changeSet>
+    <changeSet id="20230226164700-add-contract-draft-table" author="quan.nguyen">
+        <sql>
+            CREATE TABLE contract_draft (
+                id bigserial NOT NULL,
+                template_id  bigint not NULL,
+                language_code varchar(2) NULL,
+                data jsonb NOT NULL,
+                addition_data jsonb NULL,
+                party_id bigint not null,
+                url text null,
+                created_at timestamp without time zone NOT NULL DEFAULT now(),
+                updated_at timestamp without time zone NOT NULL DEFAULT now(),
+                created_by varchar(255) NULL,
+                updated_by varchar(255) NULL,
+                CONSTRAINT contract_draft_pk PRIMARY KEY (id)
+            );
+        </sql>
+        <rollback>
+            <sql>
+                DROP TABLE public.contract_draft;
+            </sql>
+        </rollback>
+    </changeSet>
+    <changeSet id="20230226165800-alter-column-in-contract-certificate" author="quan.nguyen">
+        <sql>
+            ALTER TABLE contract_certificate
+            ADD agreement_id varchar(100);
+        </sql>
+        <rollback>
+            <sql>
+                ALTER TABLE contract_certificate
+                DROP COLUMN agreement_id CASCADE;
+            </sql>
+        </rollback>
+    </changeSet>
+    <changeSet id="20230303111900-update-template-file" author="quan.nguyen">
+        <sql>
+            UPDATE public."template"
+            SET template_url='static/instalment_contract_template_v1.pdf'
+            WHERE template_name='INSTALMENT_CONTRACT';
+            UPDATE public."template"
+            SET template_url='static/qc_contract_template_v1.pdf'
+            WHERE template_name='QC_PROMOTION_CONTRACT';
+            UPDATE public."template"
+            SET template_url='static/qc_non_promo_contract_template_v1.pdf'
+            WHERE template_name='QC_CONTRACT';
+        </sql>
+    </changeSet>
+</databaseChangeLog>

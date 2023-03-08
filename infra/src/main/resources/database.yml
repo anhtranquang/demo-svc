@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      charSet: UTF-8
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${DATABASE_NAME:contract}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+    hikari:
+      minimumIdle: 8
+      maximumPoolSize: 32
+  liquidbase:
+    change-log=classpath:db/changelog/db.changelog-master.xml

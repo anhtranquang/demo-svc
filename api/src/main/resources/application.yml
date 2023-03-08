@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: contract-service
+  config:
+    import: 'classpath:clientconfig.yml,database.yml,cache.yml,s3config.yml'
+  cache:
+    type: REDIS
+  jackson:
+    deserialization:
+      read-date-timestamps-as-nanoseconds: false
+
+logging:
+  level:
+    com.finx.contractservice.infra.client.fptesign: DEBUG
+    _org.springframework.web.servlet.HandlerMapping.Mappings: DEBUG
+    org.hibernate: INFO
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      livenessState:
+        enabled: true
+      readinessState:
+        enabled: true

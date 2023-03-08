@@ -1,0 +1,22 @@
+client:
+  fptEsign:
+    auth:
+      partyUser: ${FPT_ESIGN_USER}
+      partyPassword: ${FPT_ESIGN_PASSWORD}
+      partySignature: ${FPT_ESIGN_SIGNATURE}
+      keyStore: ${FPT_ESIGN_KEYSTORE_PATH}
+      keyStorePassword: ${FPT_ESIGN_KEYSTORE_PASSWORD}
+    apiconfig:
+      url: ${FPT_ESIGN_URL:https://rssp.mobile-id.vn/eSignCloud/restapi}
+      retryableErrors: [ 408, 409, 429, 499, 503, 504 ]
+      nonRetryableErrors: [ 400, 401, 403, 404, 500 ]
+    notification:
+      subject: ${FPT_NOTIFICATION_SUBJECT:[Vikki] Ma xac thuc (OTP)}
+      template: ${FPT_NOTIFICATION_TEMPLATE:[Vikki] Ma xac thuc (OTP) cua Quy khach la {AuthorizeCode}. Vui long dien ma so nay de ky Hop dong Dien Tu va khong cung cap OTP cho bat ky ai.}
+caching:
+  templateTTL: 3600000
+  blockingEsignTTL: 86400000
+
+
+
+

@@ -1,0 +1,6 @@
+rootProject.name = 'contract-service'
+
+include 'common'
+include 'api'
+include 'core'
+include 'infra'

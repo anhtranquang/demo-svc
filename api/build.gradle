@@ -1,0 +1,54 @@
+plugins {
+    id 'application'
+    id "com.google.cloud.tools.jib" version "3.3.0"
+}
+
+apply plugin: 'com.google.cloud.tools.jib'
+
+dependencies {
+    implementation project(':common')
+    implementation project(':core')
+    implementation project(':infra')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:4.0.1'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.0'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    //    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+}
+
+application {
+    mainClass = 'com.finx.contractservice.api.ContractServiceApplication'
+}
+
+bootJar {
+    mainClass = 'com.finx.contractservice.api.ContractServiceApplication'
+}
+
+jib {
+    to.image = 'contract-service'
+    container.mainClass = 'com.finx.contractservice.api.ContractServiceApplication'
+    from {
+        image = 'gcr.io/distroless/java17-debian11'
+    }
+    extraDirectories {
+        paths {
+            path {
+                from = '../infra/src/main/resources/static/font'
+                into = '/usr/share/fonts'
+            }
+        }
+    }
+    // container.jvmFlags = ['-Dspring.profiles.active=staging']
+}
+
+test {
+    useJUnitPlatform()
+}

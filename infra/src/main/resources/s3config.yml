@@ -1,0 +1,5 @@
+awsS3:
+  bucketName: ${CONTRACT_SERVICE_AWS_S3_BUCKET:contract-service-ap-southeast-1}
+  filePathPrefix:
+    DRAFT_CONTRACT: draft
+    SIGNED_CONTRACT: signed

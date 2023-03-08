@@ -1,0 +1,5 @@
+### Default log directory when start project on local pc.
+logs/**
+*.log
+### MAC OS ###
+.DS_Store
