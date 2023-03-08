@@ -6,7 +6,7 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:3.0.1")
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:3.0.4")
 		classpath "io.spring.gradle:dependency-management-plugin:1.1.0"
 		classpath "com.diffplug.spotless:spotless-plugin-gradle:6.15.0"
 	}
