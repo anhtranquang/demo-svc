@@ -15,7 +15,7 @@ dropwizardKafka = 'io.dropwizard.modules:dropwizard-kafka:1.8.0'
 
 postgresql = 'org.postgresql:postgresql:42.4.1'
 
-hsqldb = 'org.hsqldb:hsqldb:2.7.0'
+hsqldb = 'org.hsqldb:hsqldb:2.7.1'
 
 liquibase = 'org.liquibase:liquibase-core:4.11.0'
 
